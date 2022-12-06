@@ -8,7 +8,7 @@ import AddApi from "../AddApi/AddApi";
 import AddButton from "../Button/Button";
 
 function App() {
-  const domain = "https://apilist.onrender.com/";
+  const domain = "https://apilist.onrender.com";
   /* The array of api objects */
   const [apiArray, setApiArray] = useState([]);
   /* The variable on which a refresh is triggered.  Count might be more symantically called "refresh" */
