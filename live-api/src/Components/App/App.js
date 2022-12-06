@@ -8,6 +8,7 @@ import AddApi from "../AddApi/AddApi";
 import AddButton from "../Button/Button";
 
 function App() {
+  const domain = "https://apilist.onrender.com/";
   /* The array of api objects */
   const [apiArray, setApiArray] = useState([]);
   /* The variable on which a refresh is triggered.  Count might be more symantically called "refresh" */
@@ -34,7 +35,7 @@ function App() {
      * or something was added or deleted from the list
      */
     async function getData() {
-      const response = await fetch("http://localhost:3001/api/");
+      const response = await fetch(`${domain}/api/`);
       const data = await response.json();
       setApiArray(data.payload);
     }
@@ -49,7 +50,7 @@ function App() {
         const newApiJson = JSON.stringify(newApi);
         console.log(newApiJson);
         /* we post to the API with the data in the fields */
-        const response = await fetch("http://localhost:3001/api/", {
+        const response = await fetch(`${domain}/api/`, {
           method: "POST",
           body: newApiJson,
           mode: "cors",
@@ -69,7 +70,7 @@ function App() {
   useEffect(() => {
     async function deleteApi() {
       console.log('id:', del)
-      const response = await fetch(`http://localhost:3001/api/${del}`, {
+      const response = await fetch(`${domain}/api/${del}`, {
         method: "DELETE",
         mode: "cors",
         headers: {
