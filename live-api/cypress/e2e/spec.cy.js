@@ -33,7 +33,7 @@ describe('Adding a broken API works', () => {
     cy.get('.list-container').should('contain','Weather')
   })
 })
-
+/*
 describe('Deleting an API', () => {
   it('passes', () => {
    
@@ -43,4 +43,4 @@ describe('Deleting an API', () => {
     
     
   })
-})
+})*/
